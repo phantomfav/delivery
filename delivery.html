@@ -19,6 +19,91 @@ href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&displa
   --shadow:0 4px 12px rgba(0,0,0,0.06); 
   --radius:12px; 
 } 
+ /* === UNIVERSAL MOBILE & TABLET RESPONSIVENESS === */
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: auto;
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  main {
+    margin-top: 20px;
+  }
+
+  /* Ensure all cards stack nicely */
+  .details-grid,
+  .bottom-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Make image thumbnails wrap */
+  .thumb-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Ensure tables don't overflow */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Fix topbar */
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    text-align: left;
+  }
+
+  /* Buttons scale properly */
+  button, .views select {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  /* View dropdown */
+  .views {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    display: none; /* optional: hide sidebar on very small screens */
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+}
 *{box-sizing:border-box} 
 body{ 
   margin:0; 
@@ -268,4 +353,5 @@ if(params.get('id')){
 </script> 
  
 </body> 
+
 </html>
